@@ -1,0 +1,121 @@
+trade_id,season,midseason,label,team,received
+1,2001,0,Jermaine O'Neal to Indiana,IND,Jermaine O'Neal
+1,2001,0,Jermaine O'Neal to Indiana,POR,Dale Davis
+2,2002,0,Pau Gasol draft-day deal,MEM,Pau Gasol
+2,2002,0,Pau Gasol draft-day deal,ATL,Shareef Abdur-Rahim
+3,2002,0,Jason Kidd to New Jersey,BRK,Jason Kidd
+3,2002,0,Jason Kidd to New Jersey,PHO,Stephon Marbury;Johnny Newman
+4,2004,1,Rasheed Wallace to Detroit,DET,Rasheed Wallace;Mike James
+4,2004,1,Rasheed Wallace to Detroit,ATL,Bob Sura;Zeljko Rebraca
+4,2004,1,Rasheed Wallace to Detroit,BOS,Chucky Atkins
+5,2005,0,Shaq to Miami,MIA,Shaquille O'Neal
+5,2005,0,Shaq to Miami,LAL,Lamar Odom;Caron Butler;Brian Grant
+6,2005,0,Tracy McGrady to Houston,HOU,Tracy McGrady;Juwan Howard;Tyronn Lue;Reece Gaines
+6,2005,0,Tracy McGrady to Houston,ORL,Steve Francis;Cuttino Mobley;Kelvin Cato
+7,2005,1,Vince Carter to New Jersey,BRK,Vince Carter
+7,2005,1,Vince Carter to New Jersey,TOR,Eric Williams;Aaron Williams
+8,2007,1,Allen Iverson to Denver,DEN,Allen Iverson
+8,2007,1,Allen Iverson to Denver,PHI,Andre Miller;Joe Smith
+9,2008,0,Kevin Garnett to Boston,BOS,Kevin Garnett
+9,2008,0,Kevin Garnett to Boston,MIN,Al Jefferson;Ryan Gomes;Sebastian Telfair;Gerald Green;Theo Ratliff
+10,2008,0,Ray Allen to Boston,BOS,Ray Allen;Glen Davis
+10,2008,0,Ray Allen to Boston,OKC,Wally Szczerbiak;Delonte West;Jeff Green
+11,2008,1,Pau Gasol to the Lakers,LAL,Pau Gasol
+11,2008,1,Pau Gasol to the Lakers,MEM,Kwame Brown;Javaris Crittenton;Marc Gasol
+12,2008,1,Jason Kidd back to Dallas,DAL,Jason Kidd
+12,2008,1,Jason Kidd back to Dallas,BRK,Devin Harris;DeSagana Diop;Trenton Hassell;Maurice Ager
+13,2008,1,Shaq to Phoenix,PHO,Shaquille O'Neal
+13,2008,1,Shaq to Phoenix,MIA,Shawn Marion;Marcus Banks
+14,2009,1,Iverson for Billups,DEN,Chauncey Billups
+14,2009,1,Iverson for Billups,DET,Allen Iverson
+15,2010,0,Vince Carter to Orlando,ORL,Vince Carter;Ryan Anderson
+15,2010,0,Vince Carter to Orlando,BRK,Rafer Alston;Tony Battie;Courtney Lee
+16,2011,1,Carmelo Anthony to New York,NYK,Carmelo Anthony;Chauncey Billups;Anthony Carter;Shelden Williams;Renaldo Balkman
+16,2011,1,Carmelo Anthony to New York,DEN,Danilo Gallinari;Wilson Chandler;Raymond Felton;Timofey Mozgov
+17,2011,1,Deron Williams to New Jersey,BRK,Deron Williams
+17,2011,1,Deron Williams to New Jersey,UTA,Derrick Favors;Devin Harris;Enes Freedom
+18,2012,0,Chris Paul to the Clippers,LAC,Chris Paul
+18,2012,0,Chris Paul to the Clippers,NOP,Eric Gordon;Chris Kaman;Al-Farouq Aminu;Austin Rivers
+19,2013,0,Dwight Howard four-team deal,LAL,Dwight Howard;Chris Duhon;Earl Clark
+19,2013,0,Dwight Howard four-team deal,ORL,Arron Afflalo;Al Harrington;Nikola Vucevic;Maurice Harkless
+19,2013,0,Dwight Howard four-team deal,DEN,Andre Iguodala
+19,2013,0,Dwight Howard four-team deal,PHI,Andrew Bynum;Jason Richardson
+20,2013,0,James Harden to Houston,HOU,James Harden;Cole Aldrich;Daequan Cook;Lazar Hayward
+20,2013,0,James Harden to Houston,OKC,Kevin Martin;Jeremy Lamb;Steven Adams
+21,2014,0,Garnett and Pierce to Brooklyn,BRK,Kevin Garnett;Paul Pierce;Jason Terry
+21,2014,0,Garnett and Pierce to Brooklyn,BOS,Gerald Wallace;Kris Humphries;MarShon Brooks;Keith Bogans;Jaylen Brown;Jayson Tatum
+22,2015,0,Kevin Love to Cleveland,CLE,Kevin Love
+22,2015,0,Kevin Love to Cleveland,MIN,Andrew Wiggins;Anthony Bennett;Thaddeus Young
+23,2015,1,Isaiah Thomas to Boston,BOS,Isaiah Thomas
+23,2015,1,Isaiah Thomas to Boston,PHO,Marcus Thornton
+24,2017,0,Serge Ibaka to Orlando,ORL,Serge Ibaka
+24,2017,0,Serge Ibaka to Orlando,OKC,Victor Oladipo;Ersan Ilyasova;Domantas Sabonis
+25,2017,1,DeMarcus Cousins to New Orleans,NOP,DeMarcus Cousins;Omri Casspi
+25,2017,1,DeMarcus Cousins to New Orleans,SAC,Buddy Hield;Tyreke Evans;Langston Galloway
+26,2018,0,Paul George to OKC,OKC,Paul George
+26,2018,0,Paul George to OKC,IND,Victor Oladipo;Domantas Sabonis
+27,2018,0,Kyrie Irving to Boston,BOS,Kyrie Irving
+27,2018,0,Kyrie Irving to Boston,CLE,Isaiah Thomas;Jae Crowder;Ante Zizic;Collin Sexton
+28,2018,0,Chris Paul to Houston,HOU,Chris Paul
+28,2018,0,Chris Paul to Houston,LAC,Patrick Beverley;Lou Williams;Montrezl Harrell;Sam Dekker
+29,2018,0,Jimmy Butler to Minnesota,MIN,Jimmy Butler;Justin Patton
+29,2018,0,Jimmy Butler to Minnesota,CHI,Zach LaVine;Kris Dunn;Lauri Markkanen
+30,2018,1,Blake Griffin to Detroit,DET,Blake Griffin;Willie Reed;Brice Johnson
+30,2018,1,Blake Griffin to Detroit,LAC,Tobias Harris;Avery Bradley;Boban Marjanovic
+31,2019,0,Kawhi Leonard to Toronto,TOR,Kawhi Leonard;Danny Green
+31,2019,0,Kawhi Leonard to Toronto,SAS,DeMar DeRozan;Jakob Poeltl
+32,2019,1,Jimmy Butler to Philadelphia,PHI,Jimmy Butler;Justin Patton
+32,2019,1,Jimmy Butler to Philadelphia,MIN,Robert Covington;Dario Saric;Jerryd Bayless
+33,2019,1,Kristaps Porzingis to Dallas,DAL,Kristaps Porzingis;Tim Hardaway Jr.;Courtney Lee;Trey Burke
+33,2019,1,Kristaps Porzingis to Dallas,NYK,Dennis Smith Jr.;DeAndre Jordan;Wesley Matthews
+34,2019,1,Tobias Harris to Philadelphia,PHI,Tobias Harris;Boban Marjanovic;Mike Scott
+34,2019,1,Tobias Harris to Philadelphia,LAC,Landry Shamet;Wilson Chandler;Mike Muscala
+35,2019,1,Marc Gasol to Toronto,TOR,Marc Gasol
+35,2019,1,Marc Gasol to Toronto,MEM,Jonas Valanciunas;Delon Wright;C.J. Miles
+36,2020,0,Anthony Davis to the Lakers,LAL,Anthony Davis
+36,2020,0,Anthony Davis to the Lakers,NOP,Lonzo Ball;Brandon Ingram;Josh Hart
+37,2020,0,Paul George to the Clippers,LAC,Paul George
+37,2020,0,Paul George to the Clippers,OKC,Shai Gilgeous-Alexander;Danilo Gallinari
+38,2020,0,Westbrook for Chris Paul,HOU,Russell Westbrook
+38,2020,0,Westbrook for Chris Paul,OKC,Chris Paul
+39,2020,0,Mike Conley to Utah,UTA,Mike Conley
+39,2020,0,Mike Conley to Utah,MEM,Jae Crowder;Grayson Allen;Kyle Korver
+40,2021,0,Westbrook for John Wall,WAS,Russell Westbrook
+40,2021,0,Westbrook for John Wall,HOU,John Wall
+41,2021,0,Chris Paul to Phoenix,PHO,Chris Paul;Abdel Nader
+41,2021,0,Chris Paul to Phoenix,OKC,Kelly Oubre Jr.;Ricky Rubio;Ty Jerome;Jalen Lecque
+42,2021,0,Jrue Holiday to Milwaukee,MIL,Jrue Holiday;Sam Merrill
+42,2021,0,Jrue Holiday to Milwaukee,NOP,Eric Bledsoe
+43,2021,1,James Harden to Brooklyn,BRK,James Harden
+43,2021,1,James Harden to Brooklyn,HOU,Victor Oladipo;Dante Exum;Rodions Kurucs
+43,2021,1,James Harden to Brooklyn,CLE,Jarrett Allen;Taurean Prince
+43,2021,1,James Harden to Brooklyn,IND,Caris LeVert
+44,2022,0,Russell Westbrook to the Lakers,LAL,Russell Westbrook
+44,2022,0,Russell Westbrook to the Lakers,WAS,Kyle Kuzma;Montrezl Harrell;Kentavious Caldwell-Pope
+45,2022,1,Harden for Ben Simmons,PHI,James Harden;Paul Millsap
+45,2022,1,Harden for Ben Simmons,BRK,Ben Simmons;Seth Curry;Andre Drummond
+46,2023,0,Rudy Gobert to Minnesota,MIN,Rudy Gobert
+46,2023,0,Rudy Gobert to Minnesota,UTA,Walker Kessler;Malik Beasley;Jarred Vanderbilt;Patrick Beverley;Leandro Bolmaro
+47,2023,0,Donovan Mitchell to Cleveland,CLE,Donovan Mitchell
+47,2023,0,Donovan Mitchell to Cleveland,UTA,Lauri Markkanen;Collin Sexton;Ochai Agbaji
+48,2023,1,Kevin Durant to Phoenix,PHO,Kevin Durant;T.J. Warren
+48,2023,1,Kevin Durant to Phoenix,BRK,Mikal Bridges;Cameron Johnson
+49,2023,1,Kyrie Irving to Dallas,DAL,Kyrie Irving;Markieff Morris
+49,2023,1,Kyrie Irving to Dallas,BRK,Spencer Dinwiddie;Dorian Finney-Smith
+50,2024,0,Damian Lillard to Milwaukee,MIL,Damian Lillard
+50,2024,0,Damian Lillard to Milwaukee,POR,Deandre Ayton;Toumani Camara
+50,2024,0,Damian Lillard to Milwaukee,PHO,Jusuf Nurkic;Grayson Allen;Keon Johnson;Nassir Little
+51,2024,0,Jrue Holiday to Boston,BOS,Jrue Holiday
+51,2024,0,Jrue Holiday to Boston,POR,Robert Williams;Malcolm Brogdon
+52,2025,0,Karl-Anthony Towns to New York,NYK,Karl-Anthony Towns
+52,2025,0,Karl-Anthony Towns to New York,MIN,Julius Randle;Donte DiVincenzo
+53,2025,0,Mikal Bridges to New York,NYK,Mikal Bridges
+53,2025,0,Mikal Bridges to New York,BRK,Bojan Bogdanovic;Shake Milton;Mamadi Diakite
+54,2025,0,Dejounte Murray to New Orleans,NOP,Dejounte Murray
+54,2025,0,Dejounte Murray to New Orleans,ATL,Dyson Daniels;Larry Nance Jr.
+55,2025,1,Luka Doncic to the Lakers,LAL,Luka Doncic;Maxi Kleber;Markieff Morris
+55,2025,1,Luka Doncic to the Lakers,DAL,Anthony Davis;Max Christie
+56,2026,0,Kevin Durant to Houston,HOU,Kevin Durant
+56,2026,0,Kevin Durant to Houston,PHO,Jalen Green;Dillon Brooks;Khaman Maluach
+57,2026,0,Desmond Bane to Orlando,ORL,Desmond Bane
+57,2026,0,Desmond Bane to Orlando,MEM,Kentavious Caldwell-Pope;Cole Anthony

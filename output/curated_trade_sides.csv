@@ -1,0 +1,121 @@
+trade_id,season,label,team,midseason,ws,vorp,win_pct_before,win_pct_after,win_pct_change,nrtg_change,margin_ws
+1,2001,Jermaine O'Neal to Indiana,IND,False,46.6,14.9,0.683,0.5,-0.183,-5.1,20.7
+1,2001,Jermaine O'Neal to Indiana,POR,False,25.9,5.3,0.72,0.61,-0.11,-2.4,-20.7
+2,2002,Pau Gasol draft-day deal,MEM,False,53.8,21.8,0.28,0.28,0.0,-1.9,30.3
+2,2002,Pau Gasol draft-day deal,ATL,False,23.5,7.7,0.305,0.402,0.097,1.0,-30.3
+3,2002,Jason Kidd to New Jersey,BRK,False,56.5,32.2,0.317,0.634,0.317,10.0,36.3
+3,2002,Jason Kidd to New Jersey,PHO,False,20.2,8.4,0.622,0.439,-0.183,-3.0,-36.3
+4,2004,Rasheed Wallace to Detroit,DET,True,38.7,15.9,0.61,0.659,0.049,0.2,36.1
+4,2004,Rasheed Wallace to Detroit,ATL,True,2.6,0.7,0.427,0.159,-0.268,-6.7,-36.1
+4,2004,Rasheed Wallace to Detroit,BOS,True,1.5,0.3,0.537,0.549,0.012,1.3,-37.2
+5,2005,Shaq to Miami,MIA,False,21.2,7.9,0.512,0.72,0.208,6.6,-38.7
+5,2005,Shaq to Miami,LAL,False,59.9,20.2,0.683,0.415,-0.268,-7.5,38.7
+6,2005,Tracy McGrady to Houston,HOU,False,45.5,19.2,0.549,0.622,0.073,2.6,30.3
+6,2005,Tracy McGrady to Houston,ORL,False,15.2,4.9,0.256,0.439,0.183,5.3,-30.3
+7,2005,Vince Carter to New Jersey,BRK,True,43.5,21.5,0.573,0.598,0.025,-1.3,42.9
+7,2005,Vince Carter to New Jersey,TOR,True,0.6,-0.9,0.402,0.329,-0.073,0.2,-42.9
+8,2007,Allen Iverson to Denver,DEN,True,16.4,5.8,0.537,0.61,0.073,3.4,-7.2
+8,2007,Allen Iverson to Denver,PHI,True,23.6,7.3,0.463,0.488,0.025,2.5,7.2
+9,2008,Kevin Garnett to Boston,BOS,False,48.8,21.4,0.293,0.805,0.512,15.0,20.4
+9,2008,Kevin Garnett to Boston,MIN,False,28.4,5.7,0.39,0.268,-0.122,-3.4,-20.4
+10,2008,Ray Allen to Boston,BOS,False,56.1,14.3,0.293,0.805,0.512,15.0,39.9
+10,2008,Ray Allen to Boston,OKC,False,16.2,2.1,0.378,0.244,-0.134,-5.9,-39.9
+11,2008,Pau Gasol to the Lakers,LAL,True,59.2,22.6,0.512,0.793,0.281,8.1,-18.4
+11,2008,Pau Gasol to the Lakers,MEM,True,77.6,33.4,0.268,0.293,0.025,-0.6,18.4
+12,2008,Jason Kidd back to Dallas,DAL,True,30.1,14.6,0.817,0.61,-0.207,-6.0,14.2
+12,2008,Jason Kidd back to Dallas,BRK,True,15.9,3.6,0.5,0.415,-0.085,-1.8,-14.2
+13,2008,Shaq to Phoenix,PHO,True,9.5,2.4,0.744,0.561,-0.183,-5.5,4.4
+13,2008,Shaq to Phoenix,MIA,True,5.1,1.3,0.537,0.524,-0.013,1.2,-4.4
+14,2009,Iverson for Billups,DEN,True,25.2,9.4,0.61,0.646,0.036,0.6,22.5
+14,2009,Iverson for Billups,DET,True,2.7,1.1,0.72,0.329,-0.391,-14.3,-22.5
+15,2010,Vince Carter to Orlando,ORL,False,27.9,9.3,0.72,0.72,0.0,0.8,25.6
+15,2010,Vince Carter to Orlando,BRK,False,2.3,-0.2,0.415,0.146,-0.269,-7.2,-25.6
+16,2011,Carmelo Anthony to New York,NYK,True,47.1,20.6,0.354,0.545,0.191,7.4,-8.8
+16,2011,Carmelo Anthony to New York,DEN,True,55.9,13.7,0.646,0.576,-0.07,-1.3,8.8
+17,2011,Deron Williams to New Jersey,BRK,True,24.6,9.5,0.146,0.333,0.187,3.2,-41.9
+17,2011,Deron Williams to New Jersey,UTA,True,66.5,13.5,0.646,0.545,-0.101,-5.0,41.9
+18,2012,Chris Paul to the Clippers,LAC,False,78.2,36.7,0.39,0.606,0.216,6.2,60.4
+18,2012,Chris Paul to the Clippers,NOP,False,17.8,2.1,0.561,0.318,-0.243,-5.2,-60.4
+19,2013,Dwight Howard four-team deal,LAL,False,10.9,2.0,0.621,0.549,-0.072,-0.4,-52.2
+19,2013,Dwight Howard four-team deal,ORL,False,63.1,22.6,0.561,0.244,-0.317,-8.4,52.2
+19,2013,Dwight Howard four-team deal,DEN,False,5.6,3.3,0.576,0.695,0.119,2.3,-57.5
+19,2013,Dwight Howard four-team deal,PHI,False,1.8,0.5,0.53,0.415,-0.115,-8.4,-61.3
+20,2013,James Harden to Houston,HOU,False,115.3,58.6,0.515,0.549,0.034,3.3,57.9
+20,2013,James Harden to Houston,OKC,False,57.4,11.5,0.712,0.732,0.02,3.2,-57.9
+21,2014,Garnett and Pierce to Brooklyn,BRK,False,8.2,2.4,0.598,0.537,-0.061,-3.0,-112.8
+21,2014,Garnett and Pierce to Brooklyn,BOS,False,121.0,45.8,0.506,0.305,-0.201,-4.6,112.8
+22,2015,Kevin Love to Cleveland,CLE,False,43.6,16.5,0.402,0.646,0.244,8.3,27.4
+22,2015,Kevin Love to Cleveland,MIN,False,16.2,0.3,0.488,0.195,-0.293,-12.0,-27.4
+23,2015,Isaiah Thomas to Boston,BOS,True,24.3,10.7,0.305,0.585,0.28,8.0,24.4
+23,2015,Isaiah Thomas to Boston,PHO,True,-0.1,-0.1,0.585,0.28,-0.305,-9.6,-24.4
+24,2017,Serge Ibaka to Orlando,ORL,False,3.8,1.2,0.427,0.354,-0.073,-5.1,-1.0
+24,2017,Serge Ibaka to Orlando,OKC,False,4.8,-0.2,0.671,0.573,-0.098,-6.7,1.0
+25,2017,DeMarcus Cousins to New Orleans,NOP,True,6.3,4.0,0.366,0.585,0.219,5.2,-9.4
+25,2017,DeMarcus Cousins to New Orleans,SAC,True,15.7,7.2,0.402,0.329,-0.073,-5.0,9.4
+26,2018,Paul George to OKC,OKC,False,20.8,10.2,0.573,0.585,0.012,2.7,-22.5
+26,2018,Paul George to OKC,IND,False,43.3,18.0,0.512,0.585,0.073,1.6,22.5
+27,2018,Kyrie Irving to Boston,BOS,False,18.0,9.6,0.646,0.671,0.025,0.9,7.6
+27,2018,Kyrie Irving to Boston,CLE,False,10.4,-1.7,0.622,0.61,-0.012,-2.3,-7.6
+28,2018,Chris Paul to Houston,HOU,False,16.8,7.0,0.671,0.793,0.122,2.9,-34.0
+28,2018,Chris Paul to Houston,LAC,False,50.8,16.6,0.622,0.512,-0.11,-4.4,34.0
+29,2018,Jimmy Butler to Minnesota,MIN,False,10.2,5.0,0.378,0.573,0.195,3.5,-35.6
+29,2018,Jimmy Butler to Minnesota,CHI,False,45.8,17.3,0.5,0.329,-0.171,-7.5,35.6
+30,2018,Blake Griffin to Detroit,DET,True,10.1,5.4,0.451,0.5,0.049,0.9,0.1
+30,2018,Blake Griffin to Detroit,LAC,True,10.0,3.0,0.622,0.585,-0.037,-3.6,-0.1
+31,2019,Kawhi Leonard to Toronto,TOR,False,15.4,6.9,0.72,0.707,-0.013,-1.9,-30.2
+31,2019,Kawhi Leonard to Toronto,SAS,False,45.6,13.6,0.573,0.585,0.012,-1.4,30.2
+32,2019,Jimmy Butler to Philadelphia,PHI,True,6.6,2.4,0.634,0.589,-0.045,-2.2,-0.8
+32,2019,Jimmy Butler to Philadelphia,MIN,True,7.4,1.6,0.573,0.297,-0.276,-6.4,0.8
+33,2019,Kristaps Porzingis to Dallas,DAL,True,32.6,6.8,0.293,0.573,0.28,8.2,31.9
+33,2019,Kristaps Porzingis to Dallas,NYK,True,0.7,-0.0,0.354,0.318,-0.036,-2.9,-31.9
+34,2019,Tobias Harris to Philadelphia,PHI,True,38.3,9.9,0.634,0.589,-0.045,-2.2,34.3
+34,2019,Tobias Harris to Philadelphia,LAC,True,4.0,-0.1,0.512,0.681,0.169,6.2,-34.3
+35,2019,Marc Gasol to Toronto,TOR,True,5.1,1.9,0.72,0.736,0.016,-1.8,-13.5
+35,2019,Marc Gasol to Toronto,MEM,True,18.6,5.3,0.268,0.466,0.198,5.4,13.5
+36,2020,Anthony Davis to the Lakers,LAL,False,46.3,21.2,0.451,0.732,0.281,7.4,8.6
+36,2020,Anthony Davis to the Lakers,NOP,False,37.7,14.6,0.402,0.417,0.015,0.0,-8.6
+37,2020,Paul George to the Clippers,LAC,False,23.3,12.6,0.585,0.681,0.096,5.4,-55.7
+37,2020,Paul George to the Clippers,OKC,False,79.0,38.8,0.598,0.611,0.013,-1.3,55.7
+38,2020,Westbrook for Chris Paul,HOU,False,4.2,1.8,0.646,0.611,-0.035,-2.0,-4.7
+38,2020,Westbrook for Chris Paul,OKC,False,8.9,3.5,0.598,0.611,0.013,-1.3,4.7
+39,2020,Mike Conley to Utah,UTA,False,18.3,6.8,0.61,0.611,0.001,-2.8,12.5
+39,2020,Mike Conley to Utah,MEM,False,5.8,1.0,0.402,0.466,0.064,1.6,-12.5
+40,2021,Westbrook for John Wall,WAS,False,3.7,3.4,0.347,0.472,0.125,2.8,3.9
+40,2021,Westbrook for John Wall,HOU,False,-0.2,0.4,0.611,0.236,-0.375,-10.6,-3.9
+41,2021,Chris Paul to Phoenix,PHO,False,25.5,10.2,0.466,0.708,0.242,5.6,23.7
+41,2021,Chris Paul to Phoenix,OKC,False,1.8,0.2,0.611,0.306,-0.305,-12.5,-23.7
+42,2021,Jrue Holiday to Milwaukee,MIL,False,20.7,8.4,0.767,0.639,-0.128,-3.7,18.4
+42,2021,Jrue Holiday to Milwaukee,NOP,False,2.3,0.0,0.417,0.431,0.014,0.9,-18.4
+43,2021,James Harden to Brooklyn,BRK,True,10.4,5.7,0.486,0.537,0.051,1.4,-42.8
+43,2021,James Harden to Brooklyn,HOU,True,-0.2,0.0,0.611,0.244,-0.367,-11.1,-53.4
+43,2021,James Harden to Brooklyn,CLE,True,53.2,14.9,0.292,0.537,0.245,10.1,42.8
+43,2021,James Harden to Brooklyn,IND,True,3.3,1.1,0.616,0.305,-0.311,-5.5,-49.9
+44,2022,Russell Westbrook to the Lakers,LAL,False,2.4,0.9,0.583,0.402,-0.181,-5.8,-7.3
+44,2022,Russell Westbrook to the Lakers,WAS,False,9.7,3.2,0.472,0.427,-0.045,-1.6,7.3
+45,2022,Harden for Ben Simmons,PHI,True,11.8,5.1,0.681,0.659,-0.022,-1.2,2.2
+45,2022,Harden for Ben Simmons,BRK,True,9.6,2.1,0.667,0.549,-0.118,-3.6,-2.2
+46,2023,Rudy Gobert to Minnesota,MIN,False,38.6,8.1,0.561,0.512,-0.049,-2.7,17.0
+46,2023,Rudy Gobert to Minnesota,UTA,False,21.6,6.2,0.598,0.451,-0.147,-7.1,-17.0
+47,2023,Donovan Mitchell to Cleveland,CLE,False,31.7,16.5,0.537,0.622,0.085,3.3,-0.6
+47,2023,Donovan Mitchell to Cleveland,UTA,False,32.3,10.4,0.598,0.451,-0.147,-7.1,0.6
+48,2023,Kevin Durant to Phoenix,PHO,True,14.9,8.0,0.78,0.598,-0.182,-4.5,-2.3
+48,2023,Kevin Durant to Phoenix,BRK,True,17.2,6.5,0.537,0.39,-0.147,-3.7,2.3
+49,2023,Kyrie Irving to Dallas,DAL,True,15.0,7.3,0.634,0.61,-0.024,-1.2,6.0
+49,2023,Kyrie Irving to Dallas,BRK,True,9.0,0.8,0.537,0.39,-0.147,-3.7,-6.0
+50,2024,Damian Lillard to Milwaukee,MIL,False,15.3,5.9,0.707,0.598,-0.109,-0.9,-5.0
+50,2024,Damian Lillard to Milwaukee,POR,False,19.3,3.1,0.402,0.256,-0.146,-5.2,-1.0
+50,2024,Damian Lillard to Milwaukee,PHO,False,20.3,5.5,0.549,0.598,0.049,0.9,1.0
+51,2024,Jrue Holiday to Boston,BOS,False,11.4,3.7,0.695,0.78,0.085,5.1,2.2
+51,2024,Jrue Holiday to Boston,POR,False,9.2,3.4,0.402,0.256,-0.146,-5.2,-2.2
+52,2025,Karl-Anthony Towns to New York,NYK,False,20.2,6.9,0.61,0.622,0.012,-0.6,-2.5
+52,2025,Karl-Anthony Towns to New York,MIN,False,22.7,7.4,0.683,0.598,-0.085,-1.5,2.5
+53,2025,Mikal Bridges to New York,NYK,False,13.8,4.3,0.61,0.622,0.012,-0.6,12.8
+53,2025,Mikal Bridges to New York,BRK,False,1.0,0.1,0.39,0.317,-0.073,-4.4,-12.8
+54,2025,Dejounte Murray to New Orleans,NOP,False,1.0,0.5,0.598,0.256,-0.342,-14.0,-12.5
+54,2025,Dejounte Murray to New Orleans,ATL,False,13.5,5.0,0.439,0.488,0.049,1.1,12.5
+55,2025,Luka Doncic to the Lakers,LAL,True,14.4,8.8,0.573,0.646,0.073,1.2,9.2
+55,2025,Luka Doncic to the Lakers,DAL,True,5.2,0.9,0.61,0.317,-0.293,-7.5,-9.2
+56,2026,Kevin Durant to Houston,HOU,False,11.6,5.0,0.634,0.634,0.0,0.9,8.4
+56,2026,Kevin Durant to Houston,PHO,False,3.2,-0.4,0.439,0.549,0.11,4.6,-8.4
+57,2026,Desmond Bane to Orlando,ORL,False,7.4,2.2,0.5,0.549,0.049,0.8,6.7
+57,2026,Desmond Bane to Orlando,MEM,False,0.7,-0.1,0.585,0.305,-0.28,-10.6,-6.7
