@@ -1,0 +1,266 @@
+<title>NBA Trade Ledger</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a box-score ledger. Each trade is a row that splits value between the sides, heaviest haul on the left. */
+:root{
+  --bg:#f3f5f7; --panel:#ffffff; --ink:#15202b; --muted:#5b6876; --line:#d9dfe5;
+  --won:#c8561b;  /* court orange: the side that came out ahead */
+  --lost:#3a6ea5; /* the other side */
+  --up:#1f8a4c; --down:#c0392b;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f151b; --panel:#17202a; --ink:#e6ebf0; --muted:#93a1af; --line:#2a3642;
+  --won:#f0844a; --lost:#6fa3dc; --up:#4cc27f; --down:#ef6a5b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f151b; --panel:#17202a; --ink:#e6ebf0; --muted:#93a1af; --line:#2a3642;
+  --won:#f0844a; --lost:#6fa3dc; --up:#4cc27f; --down:#ef6a5b; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:56px}
+header{padding-top:40px;display:flex;flex-direction:column;gap:14px}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{font:800 clamp(44px,8vw,84px)/.92 var(--display);text-transform:uppercase;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1 span{color:var(--won)}
+h2{font:800 34px/1 var(--display);text-transform:uppercase;margin:0;text-wrap:balance}
+.lede{max-width:64ch;font-size:17px;margin:0}
+.lede-small{max-width:64ch;color:var(--muted);margin:0}
+.stats{display:flex;flex-wrap:wrap;gap:28px;font:500 13px var(--mono);color:var(--muted)}
+.stats b{display:block;font:800 36px/1 var(--display);color:var(--ink)}
+section{display:flex;flex-direction:column;gap:18px}
+.head{display:flex;flex-direction:column;gap:8px}
+.num{font-variant-numeric:tabular-nums;font-family:var(--mono)}
+/* heist rows */
+.heists{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.heist{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.heist .yr{font:800 28px/1 var(--display);color:var(--muted)}
+.heist h3{margin:0 0 8px;font:600 16px var(--body)}
+.split{display:flex;height:26px;border-radius:3px;overflow:hidden;background:var(--line)}
+.split div{display:flex;align-items:center;padding:0 8px;font:500 12px var(--mono);color:#fff;white-space:nowrap;min-width:0;overflow:hidden}
+.split .w{background:var(--won)} .split .l{background:var(--lost)}
+.who{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;font-size:13px;color:var(--muted)}
+.who b{color:var(--ink);font-weight:600}
+.who .tm-w{color:var(--won)} .who .tm-l{color:var(--lost)}
+/* franchise chart */
+.chart{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:16px;overflow-x:auto}
+.chart svg{display:block;min-width:560px;width:100%}
+.chart text{fill:var(--muted);font:12px var(--mono)}
+.chart .lab{fill:var(--ink);font-weight:500}
+/* tables */
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+select,input{font:14px var(--body);padding:8px 10px;border:1px solid var(--line);border-radius:4px;background:var(--panel);color:var(--ink)}
+select:focus-visible,input:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--won);outline-offset:2px}
+.tbl{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:6px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+th{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right}
+.pill{display:inline-block;font:500 11px var(--mono);padding:2px 7px;border-radius:999px;border:1px solid currentColor}
+.pos{color:var(--up)} .neg{color:var(--down)}
+.players{color:var(--muted);font-size:13px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.grid2>div{min-width:0;display:flex;flex-direction:column;gap:10px}
+h3.sub{margin:0;font:800 20px var(--display);text-transform:uppercase}
+details{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+summary{cursor:pointer;font-weight:600}
+details ul{margin:10px 0 0;padding-left:18px;color:var(--muted);max-width:72ch}
+details li{margin-bottom:6px}
+footer{color:var(--muted);font-size:13px}
+@media (max-width:560px){.heist{grid-template-columns:1fr}.who{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){.split div{transition:flex-basis .4s ease}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Basketball-Reference data, 2000 to 2026-27</div>
+  <h1>Who won the <span>trade?</span></h1>
+  <p class="lede">Forget the press-conference spin. This ledger scores every side of 57 landmark NBA trades by what the incoming players actually gave their new franchise: Win Shares and VORP, counted from the day they arrived until the day they left. Then it runs every mid-season move since 2000 to show you who got better after a change of jersey, and who fell apart.</p>
+  <div class="stats" id="stats"></div>
+</header>
+
+<section>
+  <div class="head">
+    <div class="eyebrow">The most lopsided deals</div>
+    <h2>Biggest heists</h2>
+    <p class="lede-small">Bar length is Win Shares each side got from the players it received. Orange came out ahead. The wider the orange, the worse the other front office looks today.</p>
+  </div>
+  <div class="heists" id="heists"></div>
+</section>
+
+<section>
+  <div class="head">
+    <div class="eyebrow">Net Win Shares across these 57 trades</div>
+    <h2>Franchise report card</h2>
+    <p class="lede-small">Each team's WS margin summed over the trades it was in. Boston turning Garnett and Pierce's last legs into Jaylen Brown and Jayson Tatum is why they lap the field. Brooklyn paid for that, and kept paying.</p>
+  </div>
+  <div class="chart" id="franchise"></div>
+</section>
+
+<section>
+  <div class="head">
+    <div class="eyebrow">Every side of every curated trade</div>
+    <h2>The full ledger</h2>
+    <p class="lede-small">Pick a franchise to see its best and worst deals. Win % change compares the season before the trade to the first full season after it.</p>
+  </div>
+  <div class="controls">
+    <label for="teamSel" class="eyebrow">Franchise</label>
+    <select id="teamSel"></select>
+    <label for="sortSel" class="eyebrow">Sort</label>
+    <select id="sortSel">
+      <option value="margin_ws">WS margin</option>
+      <option value="ws">WS received</option>
+      <option value="win_pct_change">Win % change</option>
+      <option value="season">Season</option>
+    </select>
+  </div>
+  <div class="tbl"><table id="ledger"><thead><tr>
+    <th>Season</th><th>Trade</th><th>Team</th><th>Received</th><th class="r">WS</th><th class="r">Margin</th><th class="r">Win % change</th>
+  </tr></thead><tbody></tbody></table></div>
+</section>
+
+<section>
+  <div class="head">
+    <div class="eyebrow">Players who flipped a franchise</div>
+    <h2>Instant impact</h2>
+    <p class="lede-small">The left list is pure volume: the most Win Shares a traded player gave his new team. The right list is the jolt: the biggest jump in team win % the first full season after a trade landed.</p>
+  </div>
+  <div class="grid2">
+    <div><h3 class="sub">Most value delivered</h3><div class="tbl"><table id="impactWs"></table></div></div>
+    <div><h3 class="sub">Biggest win % jolt</h3><div class="tbl"><table id="impactJolt"></table></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="head">
+    <div class="eyebrow" id="midEyebrow">Every mid-season move since 2000</div>
+    <h2>Deadline movers</h2>
+    <p class="lede-small">These come straight from the stat lines: any player who suited up for two franchises in the same season. Box Plus/Minus before vs after needs 400 minutes on each side, so garbage-time samples don't sneak in.</p>
+  </div>
+  <div class="tbl"><table id="tenure"></table></div>
+  <div class="grid2">
+    <div><h3 class="sub">Got better after the move</h3><div class="tbl"><table id="jump"></table></div></div>
+    <div><h3 class="sub">Got worse after the move</h3><div class="tbl"><table id="drop"></table></div></div>
+  </div>
+</section>
+
+<details>
+  <summary>How this is scored, and where it falls short</summary>
+  <ul>
+    <li>Stats come from Basketball-Reference season tables (via the public sumitrodatta/bball-reference-datasets mirror). Seasons are labeled by the year they end, so 2008 means 2007-08.</li>
+    <li>Value counts only what a player gave the team that traded for him, during his first unbroken stay there. Mid-season trades count only the post-trade stint. Players who were flipped or waived without playing show 0, which is the point.</li>
+    <li>Draft picks count when the player picked is famous enough to be part of the story (Marc Gasol, Steven Adams, Jaylen Brown, Jayson Tatum, Enes Freedom, Collin Sexton, Austin Rivers). Other picks aren't valued, so pick-heavy hauls like the Gobert and George deals are undercounted for the team that got the picks.</li>
+    <li>Long tenures win. A 23-year-old who stays ten years will out-score a 31-year-old who won you a title in two. That's a real cost of the method: Win Shares don't know what a ring is worth.</li>
+    <li>The franchise report card only covers these 57 trades, not every deal a team made. Recent deals (2025 and 2026) are still being written; their totals will grow.</li>
+    <li>Deadline movers include a handful of waiver claims and buyout signings, since the stat lines can't tell those apart from trades.</li>
+  </ul>
+</details>
+<footer>Generated by analysis/trade_impact.py in the nba-stats repo. Data through <span id="thru"></span>.</footer>
+</div>
+
+<script>
+const D = /*DATA*/null;
+const $ = s => document.querySelector(s);
+const fmt = (v, d=1) => v == null ? "n/a" : Number(v).toFixed(d);
+const sgn = (v, d=1) => v == null ? "n/a" : (v > 0 ? "+" : "") + Number(v).toFixed(d);
+const pct = v => v == null ? "n/a" : (v > 0 ? "+" : "") + (v * 100).toFixed(1) + " pts";
+const cls = v => v == null ? "" : v > 0 ? "pos" : v < 0 ? "neg" : "";
+const seasonLabel = s => `${s-1}-${String(s).slice(2)}`;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+
+const T = D.trades;
+const byTrade = {};
+T.forEach(s => (byTrade[s.trade_id] ||= []).push(s));
+
+$("#thru").textContent = seasonLabel(D.generated_through_season) + " (2026-27 in progress counts toward tenure)";
+$("#midEyebrow").textContent = `${D.midseason_count.toLocaleString()} mid-season moves since 2000`;
+$("#stats").innerHTML = [
+  [Object.keys(byTrade).length, "trades scored"],
+  [T.length, "team sides"],
+  [D.midseason_count.toLocaleString(), "mid-season moves"],
+  ["27", "seasons"]
+].map(([n,l]) => `<div><b>${n}</b>${l}</div>`).join("");
+
+// Heists: trades with the biggest gap between top side and the rest
+const heists = Object.values(byTrade).map(sides => {
+  const s = [...sides].sort((a,b) => b.ws - a.ws);
+  return {w: s[0], rest: s.slice(1), gap: s[0].margin_ws};
+}).sort((a,b) => b.gap - a.gap).slice(0, 10);
+const names = s => s.players.filter(p => p.ws > 0).sort((a,b)=>b.ws-a.ws).slice(0,3).map(p=>esc(p.player)).join(", ") || "nothing of note";
+$("#heists").innerHTML = heists.map(h => {
+  const lost = h.rest.reduce((a,s)=>a+Math.max(s.ws,0),0);
+  const tot = Math.max(h.w.ws,0) + lost || 1;
+  return `<div class="heist"><div class="yr">${seasonLabel(h.w.season)}</div><div>
+    <h3>${esc(h.w.label)}</h3>
+    <div class="split" role="img" aria-label="${esc(h.w.team)} ${fmt(h.w.ws)} WS vs ${fmt(lost)} WS">
+      <div class="w" style="flex-basis:${h.w.ws/tot*100}%">${h.w.team} ${fmt(h.w.ws)}</div>
+      <div class="l" style="flex-basis:${lost/tot*100}%">${fmt(lost)}</div>
+    </div>
+    <div class="who"><div><b class="tm-w">${h.w.team}</b> got ${names(h.w)}</div>
+      <div>${h.rest.map(s=>`<b class="tm-l">${s.team}</b> got ${names(s)}`).join("; ")}</div></div>
+  </div></div>`;
+}).join("");
+
+// Franchise report card (SVG diverging bars)
+(function(){
+  const agg = {};
+  T.forEach(s => { agg[s.team] = (agg[s.team]||0) + s.margin_ws; });
+  const rows = Object.entries(agg).sort((a,b)=>b[1]-a[1]);
+  const max = Math.max(...rows.map(r=>Math.abs(r[1])));
+  const W = 900, rowH = 22, top = 24, H = top + rows.length*rowH + 10, mid = W/2, half = W/2 - 90;
+  let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Net WS margin by franchise">`;
+  const step = 50;
+  for (let v = -Math.floor(max/step)*step; v <= max; v += step) {
+    const x = mid + v/max*half;
+    svg += `<line x1="${x}" x2="${x}" y1="${top-6}" y2="${H-6}" stroke="var(--line)"/>
+      <text x="${x}" y="14" text-anchor="middle">${v>0?"+":""}${v}</text>`;
+  }
+  rows.forEach(([t,v],i) => {
+    const y = top + i*rowH, x = mid + Math.min(0,v)/max*half, w = Math.abs(v)/max*half;
+    const c = v >= 0 ? "var(--won)" : "var(--lost)";
+    svg += `<rect x="${x}" y="${y+3}" width="${Math.max(w,1)}" height="${rowH-8}" fill="${c}" rx="2"/>
+      <text class="lab" x="${v>=0 ? mid-8 : mid+8}" y="${y+rowH/2+3}" text-anchor="${v>=0?"end":"start"}">${t}</text>
+      <text x="${v>=0 ? x+w+6 : x-6}" y="${y+rowH/2+3}" text-anchor="${v>=0?"start":"end"}">${sgn(v)}</text>`;
+  });
+  $("#franchise").innerHTML = svg + "</svg>";
+})();
+
+// Ledger
+const teams = [...new Set(T.map(s=>s.team))].sort();
+$("#teamSel").innerHTML = `<option value="">All franchises</option>` + teams.map(t=>`<option>${t}</option>`).join("");
+function drawLedger(){
+  const t = $("#teamSel").value, k = $("#sortSel").value;
+  const rows = T.filter(s => !t || s.team === t)
+    .sort((a,b) => k === "season" ? b.season - a.season : (b[k] ?? -99) - (a[k] ?? -99));
+  $("#ledger tbody").innerHTML = rows.map(s => `<tr>
+    <td class="num">${seasonLabel(s.season)}${s.midseason ? ' <span class="pill">mid</span>' : ""}</td>
+    <td>${esc(s.label)}</td><td><b>${s.team}</b></td>
+    <td class="players">${s.players.map(p=>`${esc(p.player)} <span class="num">${fmt(p.ws)}</span>`).join(", ")}</td>
+    <td class="r num">${fmt(s.ws)}</td>
+    <td class="r num ${cls(s.margin_ws)}">${sgn(s.margin_ws)}</td>
+    <td class="r num ${cls(s.win_pct_change)}">${pct(s.win_pct_change)}</td></tr>`).join("");
+}
+$("#teamSel").onchange = drawLedger; $("#sortSel").onchange = drawLedger; drawLedger();
+
+// Impact players
+const allP = T.flatMap(s => s.players.map(p => ({...p, team: s.team, season: s.season, label: s.label})));
+const tbl = (head, rows) => `<thead><tr>${head.map(h=>`<th class="${h[1]||""}">${h[0]}</th>`).join("")}</tr></thead><tbody>${rows.join("")}</tbody>`;
+$("#impactWs").innerHTML = tbl([["Player"],["To"],["Yrs","r"],["WS","r"],["VORP","r"]],
+  allP.sort((a,b)=>b.ws-a.ws).slice(0,12).map(p=>`<tr><td>${esc(p.player)}<div class="players">${seasonLabel(p.season)}</div></td><td>${p.team}</td><td class="r num">${p.seasons}</td><td class="r num">${fmt(p.ws)}</td><td class="r num">${fmt(p.vorp)}</td></tr>`));
+const jolt = T.filter(s=>s.win_pct_change!=null).sort((a,b)=>b.win_pct_change-a.win_pct_change).slice(0,12);
+$("#impactJolt").innerHTML = tbl([["Trade"],["Team"],["Before","r"],["After","r"],["Change","r"]],
+  jolt.map(s=>{const star=[...s.players].sort((a,b)=>b.ws-a.ws)[0];return `<tr><td>${esc(star?star.player:s.label)}<div class="players">${esc(s.label)}</div></td><td>${s.team}</td><td class="r num">${fmt(s.win_pct_before,3)}</td><td class="r num">${fmt(s.win_pct_after,3)}</td><td class="r num pos">${pct(s.win_pct_change)}</td></tr>`}));
+
+// Mid-season movers
+$("#tenure").innerHTML = tbl([["Season"],["Player"],["From"],["To"],["Yrs with new team","r"],["WS","r"],["VORP","r"]],
+  D.top_tenure.slice(0,15).map(m=>`<tr><td class="num">${seasonLabel(m.season)}</td><td>${esc(m.player)}</td><td>${m.from}</td><td>${m.to}</td><td class="r num">${m.tenure_seasons}</td><td class="r num">${fmt(m.tenure_ws)}</td><td class="r num">${fmt(m.tenure_vorp)}</td></tr>`));
+const mv = list => tbl([["Player"],["Move"],["BPM before","r"],["After","r"],["Change","r"]],
+  list.slice(0,12).map(m=>`<tr><td>${esc(m.player)}<div class="players">${seasonLabel(m.season)}</div></td><td class="num">${m.from} to ${m.to}</td><td class="r num">${fmt(m.bpm_before)}</td><td class="r num">${fmt(m.bpm_after)}</td><td class="r num ${cls(m.bpm_change)}">${sgn(m.bpm_change)}</td></tr>`));
+$("#jump").innerHTML = mv(D.top_jump);
+$("#drop").innerHTML = mv(D.top_drop);
+</script>
